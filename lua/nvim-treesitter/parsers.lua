@@ -1205,6 +1205,18 @@ list.tiger = {
   maintainers = { "@ambroisie" },
 }
 
+list.t32 = {
+  install_info = {
+    url = "https://codeberg.org/xasc/tree-sitter-t32",
+    files = { "src/parser.c", "src/scanner.c" },
+    branch = "main",
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
+  },
+  filetype = "t32",
+  maintainers = { "@xasc" },
+}
+
 list.sxhkdrc = {
   install_info = {
     url = "https://github.com/RaafatTurki/tree-sitter-sxhkdrc",

@@ -1,0 +1,73 @@
+PRIVATE &password
+; <- keyword
+;        ^ variable
+ENTRY &password
+; <- keyword
+;        ^ parameter
+
+IF "&password"==""
+; <- conditional
+;  ^ string
+;    ^ variable
+;             ^ operator
+(
+    ECHO "Failed to provide password."
+    ENDDO
+;   ^ keyword.return
+)
+ELSE
+; <- conditional
+(
+    PRIVATE &pass
+
+    &pass=FALSE()
+;          ^ function.call
+    WHILE !&pass
+    (
+        GOSUB verify_password "&password"
+;             ^ label
+        RETURNVALUES &pass
+
+        WAIT 10.ms
+;            ^ number
+    )
+)
+
+LOCAL &num
+
+&num = 2.
+;      ^ number
+
+RePeaT &num PRINT "Password: &password"
+
+WinCLEAR
+FramePOS ,,,,Maximized
+;        ^ punctuation.delimiter
+;            ^ constant
+WinPOS 0% 50% 100% 35%
+;      ^ number
+COVerage.ListFunc
+
+ENDDO
+
+
+verify_password:
+; <- label
+(
+    PARAMETERS &password
+
+    SYStem.Option.KEYCODE "&password"
+    SYStem.JtagClock  1kHz
+;                     ^ number
+    SYStem.Mode.Attach
+
+    Data.Set EAXI:0x34000000 %Long 0x34000100 0x34000021 /verify
+;            ^ number
+;                            ^ constant.builtin
+;                                                         ^ constant
+
+    RETURN TRUE()
+;   ^ keyword.return
+)
+
+// vim: set ft=t32:
