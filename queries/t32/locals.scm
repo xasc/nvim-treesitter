@@ -1,57 +1,35 @@
-(block) @local.scope
+(block) @scope
 
-(macro) @local.reference
-(identifier) @local.reference
+; Parameter definitions
+(parameter_declaration
+  command: (identifier)
+  macro: (macro) @definition.parameter)
 
-(
-  (macro_definition
-    command: (identifier) @command
-    macro: (macro) @local.definition.var)
-  (#match? @command "^[pP][rR][iI][vV][aA][tT][eE]$")
-)
-(
-  (macro_definition
-    command: (identifier) @command
-    macro: (macro) @global.definition.var)
-  (#match? @command "^[lL][oO][cC][aA][lL]$")
-)
-(
-  (macro_definition
-    command: (identifier) @command
-    macro: (macro) @global.definition.var)
-  (#match? @command "^[gG][lL][oO][bB][aA][lL]$")
-)
+; Variable definitions
+(macro_definition
+  command: (identifier)
+  macro: (macro) @definition.var)
 
+(command_expression
+  command: (identifier)
+  arguments: (argument_list
+    variable: (identifier) @definition.var))
+
+; Function definitions
+(subroutine_block
+  command: (identifier)
+  subroutine: (identifier) @definition.function)
+
+(labeled_expression
+  label: (identifier) @definition.function
+  (block))
+
+; References
 (
-  (command_expression
-    command: (identifier) @command
-    arguments: (argument_list
-        variable: (identifier) @local.definition.var))
-  (#match? @command "^([vV][aA][rR]|[vV])[.][nN][eE][wW][lL][oO][cC][aA][lL]$")
-)
-(
-  (command_expression
-    command: (identifier) @command
-    arguments: (argument_list
-        variable: (identifier) @global.definition.var))
-  (#match? @command "^([vV][aA][rR]|[vV])[.][nN][eE][wW][gG][lL][oO][bB][aA][lL]$")
+  (subroutine_call_expression
+    command: (identifier)
+    subroutine: (identifier) @reference)
+  (set! reference.kind "function")
 )
 
-(
-  (macro_definition
-    command: (identifier) @command
-    macro: (macro) @local.definition.parameter)
-  (#match? @command "^[pP][aA][rR][aA][mM][eE][tT][eE][rR][sS]$")
-)
-(
-  (command_expression
-    command: (identifier) @command
-    arguments: (argument_list (macro) @local.definition.parameter))
-  (#match? @command "^[eE][nN][tT][rR][yY]$")
-)
-(
-  (command_expression
-    command: (identifier) @command
-    arguments: (argument_list (macro) @local.definition.parameter))
-  (#match? @command "^[rR][eE][tT][uU][rR][nN][vV][aA][lL][uU][eE][sS]$")
-)
+(macro) @reference

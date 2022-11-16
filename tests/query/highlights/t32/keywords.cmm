@@ -1,6 +1,6 @@
 PRIVATE &password
 ; <- keyword
-;        ^ variable
+;        ^ variable.builtin
 ENTRY &password
 ; <- keyword
 ;        ^ parameter
@@ -8,7 +8,7 @@ ENTRY &password
 IF "&password"==""
 ; <- conditional
 ;  ^ string
-;    ^ variable
+;    ^ variable.builtin
 ;             ^ operator
 (
     ECHO "Failed to provide password."
@@ -21,24 +21,37 @@ ELSE
     PRIVATE &pass
 
     &pass=FALSE()
-;          ^ function.call
+;          ^ function.builtin
     WHILE !&pass
+;         ^ operator
     (
         GOSUB verify_password "&password"
-;             ^ label
+;             ^ function.call
         RETURNVALUES &pass
-
+;                     ^ parameter
         WAIT 10.ms
 ;            ^ number
+    )
+
+    IF !&pass
+        GOTO fail
+;            ^ label
+    ELSE
+    (
+        GOSUB start_debug
+;             ^ function.call
     )
 )
 
 LOCAL &num
+;      ^ variable.builtin
 
 &num = 2.
 ;      ^ number
 
 RePeaT &num PRINT "Password: &password"
+;       ^ variable.builtin
+;                             ^ variable.builtin
 
 WinCLEAR
 FramePOS ,,,,Maximized
@@ -51,10 +64,18 @@ COVerage.ListFunc
 ENDDO
 
 
-verify_password:
+fail:
 ; <- label
+    PRINT %ERROR "Password verification failed."
+    END
+;   ^ keyword.return
+
+
+verify_password:
+; <- function
 (
     PARAMETERS &password
+;               ^ parameter
 
     SYStem.Option.KEYCODE "&password"
     SYStem.JtagClock  1kHz
@@ -63,10 +84,19 @@ verify_password:
 
     Data.Set EAXI:0x34000000 %Long 0x34000100 0x34000021 /verify
 ;            ^ number
-;                            ^ constant.builtin
+;                             ^ constant.builtin
 ;                                                         ^ constant
 
     RETURN TRUE()
+;   ^ keyword.return
+)
+
+
+SUBROUTINE start_debug
+;          ^ function
+(
+    Go main
+    RETURN
 ;   ^ keyword.return
 )
 
