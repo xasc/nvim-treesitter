@@ -5,6 +5,9 @@
   "astro": {
     "revision": "947e93089e60c66e681eba22283f4037841451e7"
   },
+  "awk": {
+    "revision": "a799bc5da7c2a84bc9a06ba5f3540cf1191e4ee3"
+  },
   "bash": {
     "revision": "77cf8a7cab8904baf1a721762e012644ac1d4c7b"
   },
@@ -21,7 +24,7 @@
     "revision": "7175a6dd5fc1cee660dce6fe23f6043d75af424a"
   },
   "c_sharp": {
-    "revision": "aa65ad51f04e4c9d41dce117597f2b4d24a16bfb"
+    "revision": "3ef3f7f99e16e528e6689eae44dff35150993307"
   },
   "clojure": {
     "revision": "087bac78c53fe1387756cd5b8e68a69b3f6d7244"
@@ -156,7 +159,7 @@
     "revision": "384b26ec65e10f26cf147bfcde772c50ca5ef0d0"
   },
   "hocon": {
-    "revision": "dd53316168106fd921e7234d75aa94e47b119479"
+    "revision": "c390f10519ae69fdb03b3e5764f5592fb6924bcc"
   },
   "html": {
     "revision": "29f53d8f4f2335e61bf6418ab8958dac3282077a"
@@ -186,7 +189,7 @@
     "revision": "0475a5017ad7dc84845d1d33187f2321abcb261d"
   },
   "julia": {
-    "revision": "bedd19f3c3d745c3da8451a35c7bfc5f48d07ee6"
+    "revision": "628713553c42f30595a3b0085bb587e9359b986a"
   },
   "kotlin": {
     "revision": "b953dbdd05257fcb2b64bc4d9c1578fac12e3c28"
@@ -285,7 +288,7 @@
     "revision": "0695cd0760532de7b54f23c667d459b5d1332b44"
   },
   "r": {
-    "revision": "0f4f66e5050037b759ea040dafd596bcdda1de94"
+    "revision": "80efda55672d1293aa738f956c7ae384ecdc31b4"
   },
   "racket": {
     "revision": "09cb27a06415bce529a26774a842f5a80d50d362"
@@ -297,7 +300,7 @@
     "revision": "e1cfca3c79896ff79842f057ea13e529b66af636"
   },
   "rego": {
-    "revision": "6d70da3a998fd0081efc5d1019c71e74cc1568e9"
+    "revision": "6174f05f58e8c35d8c82323dd8c599b90b3171b3"
   },
   "rnoweb": {
     "revision": "502c1126dc6777f09af5bef16e72a42f75bd081e"
@@ -342,7 +345,7 @@
     "revision": "52e122ae68b316d3aa960a0a422d3645ba717f42"
   },
   "swift": {
-    "revision": "d7808f030a44dc8768948042baa7566949785e2f"
+    "revision": "25f8de356e3c33099ed691bd3b8b5c0fe3a11e15"
   },
   "sxhkdrc": {
     "revision": "440d5f913d9465c9c776a1bd92334d32febcf065"
@@ -385,6 +388,9 @@
   },
   "verilog": {
     "revision": "4457145e795b363f072463e697dfe2f6973c9a52"
+  },
+  "vhs": {
+    "revision": "2f87b9d973597e69552ecf6a4fe16470fbd8c44e"
   },
   "vim": {
     "revision": "4ae7bd67706d7e10afed827ce2ded884ab41650f"

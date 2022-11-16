@@ -174,6 +174,7 @@ We are looking for maintainers to add more parsers and to write query files for 
 <!--parserinfo-->
 - [x] [agda](https://github.com/AusCyberman/tree-sitter-agda) (maintained by @Decodetalkers)
 - [x] [astro](https://github.com/virchau13/tree-sitter-astro) (maintained by @virchau13)
+- [ ] [awk](https://github.com/Beaglefoot/tree-sitter-awk)
 - [x] [bash](https://github.com/tree-sitter/tree-sitter-bash) (maintained by @TravonteD)
 - [x] [beancount](https://github.com/polarmutex/tree-sitter-beancount) (maintained by @polarmutex)
 - [x] [bibtex](https://github.com/latex-lsp/tree-sitter-bibtex) (maintained by @theHamsta, @clason)
@@ -300,6 +301,7 @@ We are looking for maintainers to add more parsers and to write query files for 
 - [x] [v](https://github.com/vlang/vls) (maintained by @tami5)
 - [x] [vala](https://github.com/vala-lang/tree-sitter-vala) (maintained by @Prince781, @vala-lang)
 - [x] [verilog](https://github.com/tree-sitter/tree-sitter-verilog) (maintained by @zegervdv)
+- [x] [vhs](https://github.com/charmbracelet/tree-sitter-vhs) (maintained by @caarlos0, @maaslalani)
 - [x] [vim](https://github.com/vigoux/tree-sitter-viml) (maintained by @vigoux)
 - [x] [vue](https://github.com/ikatyang/tree-sitter-vue) (maintained by @WhyNotHugo)
 - [x] [wgsl](https://github.com/szebniok/tree-sitter-wgsl) (maintained by @szebniok)

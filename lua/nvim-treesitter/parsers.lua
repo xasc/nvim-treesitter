@@ -18,6 +18,7 @@ local filetype_to_parsername = {
   pandoc = "markdown",
   rmd = "markdown",
   cs = "c_sharp",
+  tape = "vhs",
 }
 
 ---@class InstallInfo
@@ -1292,6 +1293,23 @@ list.diff = {
   },
   maintainers = { "@gbprod" },
   filetype = "gitdiff",
+}
+
+list.vhs = {
+  install_info = {
+    url = "https://github.com/charmbracelet/tree-sitter-vhs",
+    branch = "main",
+    files = { "src/parser.c" },
+  },
+  maintainers = { "@caarlos0", "@maaslalani" },
+  filetype = "tape",
+}
+
+list.awk = {
+  install_info = {
+    url = "https://github.com/Beaglefoot/tree-sitter-awk",
+    files = { "src/parser.c", "src/scanner.c" },
+  },
 }
 
 local M = {
