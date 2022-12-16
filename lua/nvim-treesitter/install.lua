@@ -255,6 +255,8 @@ local function iter_cmd_sync(cmd_list)
     else
       local ret = vim.fn.system(get_command(cmd))
       print("ret: ", ret)
+      print("cmd.err: ", cmd.err)
+      print("vim.v.shell_error: ", vim.v.shell_error)
       if vim.v.shell_error ~= 0 then
         print(ret)
         api.nvim_err_writeln(
