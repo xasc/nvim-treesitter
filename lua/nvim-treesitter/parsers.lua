@@ -1391,11 +1391,15 @@ local parser_files
 function M.reset_cache()
   parser_files = setmetatable({}, {
     __index = function(tbl, key)
+      print("#1 key: ", key)
+
       rawset(tbl, key, api.nvim_get_runtime_file("parser/" .. key .. ".*", false))
+      print("#2 key: ", rawget(tbl, key))
       return rawget(tbl, key)
     end,
   })
 end
+
 
 M.reset_cache()
 
@@ -1403,11 +1407,6 @@ function M.has_parser(lang)
   lang = lang or M.get_buf_lang(api.nvim_get_current_buf())
   print("# lang: ", lang)
   print("# parser_files[lang]: ", #parser_files[lang])
-
-  if lang == "t32" then
-    print("# exit -> A.1", lang)
-    return true
-  end
 
   if not lang or #lang == 0 then
     print("# exit -> A", lang)
@@ -1420,6 +1419,7 @@ function M.has_parser(lang)
   end
   return #parser_files[lang] > 0
 end
+
 
 
 function M.get_parser(bufnr, lang)
