@@ -57,7 +57,7 @@ local builtin_modules = {
     module_path = "nvim-treesitter.incremental_selection",
     enable = false,
     keymaps = {
-      init_selection = "gnn",
+      init_selection = "gnn", -- set to `false` to disable one of the mappings
       node_incremental = "grn",
       scope_incremental = "grc",
       node_decremental = "grm",
@@ -127,8 +127,8 @@ local function enable_mod_conf_autocmd(mod)
 
   api.nvim_create_autocmd("FileType", {
     group = api.nvim_create_augroup("NvimTreesitter-" .. mod, {}),
-    callback = function()
-      require("nvim-treesitter.configs").reattach_module(mod)
+    callback = function(args)
+      require("nvim-treesitter.configs").reattach_module(mod, args.buf)
     end,
     desc = "Reattach module",
   })
@@ -574,7 +574,7 @@ end
 ---plugin first, followed by the "site" dir from "runtimepath". "site" dir will
 ---be created if it doesn't exist. Using only the package dir won't work when
 ---the plugin is installed with Nix, since the "/nix/store" is read-only.
----@param folder_name string
+---@param folder_name string|nil
 ---@return string|nil, string|nil
 function M.get_parser_install_dir(folder_name)
   folder_name = folder_name or "parser"
