@@ -1401,12 +1401,16 @@ M.reset_cache()
 
 function M.has_parser(lang)
   lang = lang or M.get_buf_lang(api.nvim_get_current_buf())
+  print("# lang: ", lang)
+  print("# parser_files[lang]: ", #parser_files[lang])
 
   if not lang or #lang == 0 then
+    print("# exit -> A", lang)
     return false
   end
   -- HACK: nvim internal API
   if vim._ts_has_language(lang) then
+    print("# exit -> B", lang)
     return true
   end
   return #parser_files[lang] > 0
