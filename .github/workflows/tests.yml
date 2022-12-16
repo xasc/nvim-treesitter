@@ -3,11 +3,14 @@ name: Tests
 on:
   push:
     branches:
-      - 'master'
+      - 'xasc-gh-actions-check'
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     branches:
-      - 'master'
+      - 'xasc-gh-actions-check'
+      
+  workflow_dispatch:
+  
 
 # Cancel any in-progress CI runs for a PR if it is updated
 concurrency:
