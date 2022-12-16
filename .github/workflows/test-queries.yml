@@ -3,11 +3,11 @@ name: Test queries
 on:
   push:
     branches:
-      - 'master'
+      - 'xasc-gh-actions-check'
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     branches:
-      - 'master'
+      - 'xasc-gh-actions-check'
       
   workflow_dispatch:
 
