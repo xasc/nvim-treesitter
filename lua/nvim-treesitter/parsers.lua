@@ -1404,6 +1404,11 @@ function M.has_parser(lang)
   print("# lang: ", lang)
   print("# parser_files[lang]: ", #parser_files[lang])
 
+  if lang == "t32" then
+    print("# exit -> A.1", lang)
+    return true
+  end
+
   if not lang or #lang == 0 then
     print("# exit -> A", lang)
     return false
@@ -1415,6 +1420,7 @@ function M.has_parser(lang)
   end
   return #parser_files[lang] > 0
 end
+
 
 function M.get_parser(bufnr, lang)
   bufnr = bufnr or api.nvim_get_current_buf()
