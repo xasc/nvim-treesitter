@@ -1394,11 +1394,13 @@ function M.reset_cache()
       print("#1 key: ", key)
 
       rawset(tbl, key, api.nvim_get_runtime_file("parser/" .. key .. ".*", false))
+      print("api.nvim_get_runtime_file(\"parser/\" .. key .. \".*\", false): ", table.concat(api.nvim_get_runtime_file("parser/" .. key .. ".*", false), ", "))
       print("#2 key: ", #rawget(tbl, key))
       return rawget(tbl, key)
     end,
   })
 end
+
 
 M.reset_cache()
 
