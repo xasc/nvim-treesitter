@@ -245,6 +245,7 @@ end
 
 local function iter_cmd_sync(cmd_list)
   for _, cmd in ipairs(cmd_list) do
+    print("cmd: ", get_command(cmd))
     if cmd.info then
       print(cmd.info)
     end
