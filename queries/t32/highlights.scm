@@ -135,7 +135,6 @@
   function: (hll_field_expression
     field: (hll_field_identifier) @function.call))
 
-
 ; HLL variables
 (identifier) @variable
 (hll_field_identifier) @field
