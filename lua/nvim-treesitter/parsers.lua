@@ -1512,7 +1512,7 @@ list.t32 = {
   install_info = {
     url = "https://codeberg.org/xasc/tree-sitter-t32",
     files = { "src/parser.c", "src/scanner.c" },
-    revision = "572428aebb2abef99494f68b2e1277c41038c0c1",
+    revision = "767f3c52fe649e4a6ab3551ac287e5b6038c9148",
   },
   maintainers = { "@xasc" },
 }
