@@ -3,10 +3,10 @@ name: Tests
 on:
   push:
     branches:
-      - "master"
-  pull_request:
-    branches:
-      - "master"
+      - "t32-hll-extension-master-ci"
+  # pull_request:
+  #   branches:
+  #     - "master"
 
 # Cancel any in-progress CI runs for a PR if it is updated
 concurrency:
