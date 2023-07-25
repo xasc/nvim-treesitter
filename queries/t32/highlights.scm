@@ -158,7 +158,7 @@
 (
   (command_expression
     command: (identifier) @keyword.return)
-  (#lua-match? @keyword.return "^[eE][nN][dD]([dD][oO])?$")
+  (#match? @keyword.return "^[eE][nN][dD]([dD][oO])?$")
 )
 (
   (command_expression
