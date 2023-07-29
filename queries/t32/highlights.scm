@@ -44,12 +44,12 @@
 ] @operator
 
 [
- "("
- ")"
- "{"
- "}"
- "["
- "]"
+  "("
+  ")"
+  "{"
+  "}"
+  "["
+  "]"
 ] @punctuation.bracket
 
 [
@@ -135,35 +135,10 @@
   function: (hll_field_expression
     field: (hll_field_identifier) @function.call))
 
-(hll_call_expression
-  (hll_argument_list
-    (identifier) @variable))
 
+; HLL variables
+(identifier) @variable
 (hll_field_identifier) @field
-
-((hll_field_expression
-  (hll_field_identifier) @field)) @variable
-
-(hll_subscript_expression
-  argument: (identifier) @variable)
-
-(hll_pointer_expression
-  argument: (identifier) @variable)
-
-(hll_cast_expression
-  value: (identifier) @variable)
-
-(hll_binary_expression
-  (identifier) @variable)
-
-(hll_unary_expression
-  (identifier) @variable)
-
-(hll_update_expression
-  (identifier) @variable)
-
-(hll_assignment_expression
-  left: (identifier) @variable)
 
 
 ; Commands
@@ -172,6 +147,9 @@
 
 (macro_definition
   command: (identifier) @keyword)
+
+(call_expression
+  function: (identifier) @function.builtin)
 
 
 ; Returns
@@ -215,8 +193,11 @@
 (labeled_expression
   label: (identifier) @label)
 
-(option_expression) @constant.builtin
-(format_expression) @constant.builtin
+(option_expression
+  (identifier) @constant.builtin)
+
+(format_expression
+  (identifier) @constant.builtin)
 
 
 ; Subroutine blocks
@@ -246,9 +227,6 @@
   command: (identifier) @repeat)
 (repeat_block
   command: (identifier) @repeat)
-
-(call_expression
-  function: (identifier) @function.builtin)
 
 
 (comment) @comment @spell
