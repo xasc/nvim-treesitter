@@ -147,12 +147,9 @@
 (macro_definition
   command: (identifier) @keyword)
 
-<<<<<<< HEAD
 (call_expression
   function: (identifier) @function.builtin)
 
-=======
->>>>>>> 452f7bf7 (Support nodes for HLL extension)
 
 ; Returns
 (
