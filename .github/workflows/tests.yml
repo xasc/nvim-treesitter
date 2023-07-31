@@ -3,7 +3,7 @@ name: Tests
 on:
   push:
     branches:
-      - "master"
+      - "t32-remove-pinning-ci"
   pull_request:
     branches:
       - "master"
