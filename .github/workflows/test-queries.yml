@@ -3,7 +3,7 @@ name: Test queries
 on:
   push:
     branches:
-      - "master"
+      - "t32-test-ci"
   pull_request:
     branches:
       - "master"
